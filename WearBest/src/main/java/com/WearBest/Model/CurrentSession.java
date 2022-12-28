@@ -1,38 +1,30 @@
 package com.WearBest.Model;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.ToString;
 
-@Entity
 @Data
 @AllArgsConstructor
+@ToString
+@Entity
 @NoArgsConstructor
-@Getter
-@Setter
-public class Address {
+public class CurrentSession {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer addressid;
-	@NotNull
-	private String state;
-	@NotNull
-	private String city;
-	@NotNull
-	private String pinCode;
-	@NotNull
-	private String houseNo;
-	@NotNull
-	private String colony;
+	private Integer crId;
+	private Integer key;
+	private String email;
+	private String password;
 	
-	
+	private LocalDate ldate;
 
 }
