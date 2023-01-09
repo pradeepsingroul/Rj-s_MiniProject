@@ -81,6 +81,18 @@ public class GlobleException extends RuntimeException{
 		ex.setLdt(LocalDateTime.now());
 		ex.setMessage(ad.getMessage());
 		return new ResponseEntity<ExceptionsDetails>(ex,HttpStatus.BAD_GATEWAY);
+		
+		
+	}	
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<ExceptionsDetails> mynotFoundHandler(Exception ad,WebRequest we)  {
+
+	
+		ExceptionsDetails ex = new ExceptionsDetails();
+		ex.setDetails(we.getDescription(false));
+		ex.setLdt(LocalDateTime.now());
+		ex.setMessage(ad.getMessage());
+		return new ResponseEntity<ExceptionsDetails>(ex,HttpStatus.BAD_GATEWAY);
 						
 	}	
 	
